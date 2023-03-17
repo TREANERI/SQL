@@ -1,0 +1,18 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, size_available INTEGER, delivery_price INTEGER);
+INSERT INTO store VALUES (1, "T shirt", 5.99, 8, 3.99);
+INSERT INTO store VALUES (2, "vest", 2.99, 10, 3.99);
+INSERT INTO store VALUES (3, "trousers", 15.99, 14, 3.99);
+INSERT INTO store VALUES (4, "jacket", 30.99, 12, 3.99);
+INSERT INTO store VALUES (5, "blazer", 25.99, 14, 3.99);
+INSERT INTO store VALUES (6, "long skirt", 20.99, 10, 3.99);
+INSERT INTO store VALUES (7, "short skirt", 13.99, 8, 3.99);
+INSERT INTO store VALUES (8, "thermal gloves", 20.99, 10, 3.99);
+INSERT INTO store VALUES (9, "robe", 20.99, 12, 3.99);
+INSERT INTO store VALUES (10, "pajama set", 15.99, 14, 3.99);
+INSERT INTO store VALUES (11, "socks", 6.99, 10, 3.99);
+INSERT INTO store VALUES (12, "long shorts", 8.99, 10, 3.99);
+INSERT INTO store VALUES (13, "thermal tops", 20.99, 10, 3.99);
+INSERT INTO store VALUES (14, "thermal bottoms", 20.99, 10, 3.99);
+INSERT INTO store VALUES (15, "thermal vest", 10.99, 10, 3.99);
+SELECT price FROM store ORDER BY price;
+SELECT size_available FROM store
