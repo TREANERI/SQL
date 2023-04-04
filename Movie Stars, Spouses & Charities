@@ -1,0 +1,59 @@
+/* Create table about the people and what they do here */
+CREATE TABLE MovieStars(PersonID INTEGER Primary Key,Fullname TEXT,Movie TEXT, Marital_status TEXT, Married_to NONE, Divorced_From NONE); 
+
+
+INSERT INTO MovieStars VALUES (1, 'Ashton Kutcher', 'Butterfly Effect', 'Married','Mila Kunis', 'Demi Moore');
+INSERT INTO MovieStars VALUES (2, 'Mila Kunis', 'Jupiter Ascending', 'Married', 'Ashton Kutcher', NULL);
+INSERT INTO MovieStars VALUES (3, 'Brad Pitt', 'Benjamin Button ', 'Divorced', NULL, 'Angelina Jolie');
+INSERT INTO MovieStars VALUES (4, 'Angelina Jolie', 'Tomb Raider', 'Divorced', NULL, 'Brad Pitt');
+INSERT INTO MovieStars VALUES (5, 'Denzel Washington', 'Fences', 'Married', 'Paulette Pearson', NULL);
+INSERT INTO MovieStars VALUES (6, 'Oprah Winfry', 'A Wrinkle In Time', 'Single', NULL, NULL);
+INSERT INTO MovieStars VALUES (7, 'Samuel L Jackson', 'Snakes on the Plane', 'Married', 'Latanya Richardson', NULL);
+INSERT INTO MovieStars VALUES (8, 'Kerry Washington', 'Fantastic Four', 'Married', 'Nnamdi Asomugha', NULL);
+INSERT INTO MovieStars VALUES (9, 'Omar Epps', 'Fatal Affair', 'Married', 'Keisha Spivey', NULL);
+INSERT INTO MovieStars VALUES (10, 'Matthew McConaughey', 'Intersteller', 'Married', 'Camila Alves', NULL);
+INSERT INTO MovieStars VALUES (11, 'Viola Davis', 'Fences', 'Married', 'Julius Tennon', NULL);
+INSERT INTO MovieStars VALUES (12, 'Taraji P Henson', 'Benjami Button', 'Single', NULL, NULL);
+INSERT INTO MovieStars VALUES (13, 'Micheal Douglas', 'Ghost', 'Married', 'Cathrine Zeta Jones', NULL);
+INSERT INTO MovieStars VALUES (14, 'Mel Gibson', 'Mad Max', 'Married', 'Rosaline Ross', NULL);
+INSERT INTO MovieStars VALUES (15, 'Bruce Willis', 'Die Hard','Married', 'Emma Heming', 'Demi Moore');
+
+CREATE TABLE Charity_Work (PersonID INTEGER Primary Key, Fullname TEXT, Charity TEXT, year_founded INTEGER); 
+
+INSERT INTO Charity_Work VALUES (1, 'Ashton Kutcher', 'Thorn', 2017);
+INSERT INTO Charity_Work VALUES (2, 'Mila Kunis','St Jude Childrens Research Hospital', 2015);
+INSERT INTO Charity_Work VALUES (3, 'Brad Pitt', 'Make it Right', 2007);
+INSERT INTO Charity_Work VALUES (4, 'Angelina Jolie', 'Direct Change', 2003);
+INSERT INTO Charity_Work VALUES (5, 'Denzel Washington','Impact', 2001);
+INSERT INTO Charity_Work VALUES (8, 'Kerry Washington', 'NAACP', 2015);
+INSERT INTO Charity_Work VALUES (9, 'Omar Epps', 'Still', 2019);
+INSERT INTO Charity_Work VALUES (10, 'Matthew McConaughey', 'Just Keep Living', 2000);
+INSERT INTO Charity_Work VALUES (11, 'Viola Davis', 'Soles4Souls', 2000);
+INSERT INTO Charity_Work VALUES (12, 'Taraji P Henson', 'Boris Lawrence Henson Foundation', 2007);
+INSERT INTO Charity_Work VALUES (13, 'Micheal Douglas', 'Chartwell Cancer Trust', 2005);
+INSERT INTO Charity_Work VALUES (14, 'Mel Gibson', 'Meding Kids International', 1999);
+INSERT INTO Charity_Work VALUES (15, 'Bruce Willis', 'Hope North', 2001);
+
+SELECT Fullname, Marital_status
+FROM MovieStars;
+
+SELECT MovieStars.Fullname, Charity_Work.Charity
+FROM MovieStars
+JOIN Charity_work
+ON MovieStars.PersonID = Charity_Work.PersonID;
+
+SELECT Fullname, Married_to
+FROM MovieStars
+ORDER BY Fullname AND Married_to;
+
+SELECT Fullname, Married_to
+FROM MovieStars
+WHERE Married_to = 'Ashton Kutcher';
+
+SELECT Fullname, Divorced_from
+FROM MovieStars
+WHERE Divorced_from = 'Demi Moore';
+
+SELECT Fullname, Divorced_from
+FROM MovieStars
+WHERE Divorced_from = 'Brad Pitt';
