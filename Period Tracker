@@ -1,0 +1,29 @@
+CREATE TABLE Period_Tracker (day INTEGER, month TEXT, estimated_start_date INTEGER, end_date INTEGER);
+
+INSERT INTO Period_Tracker VALUES (1, "JAN", 13, 20);
+INSERT INTO Period_Tracker VALUES (1, "FEB", 15, 22);
+INSERT INTO Period_Tracker VALUES (1, "March", 17, 24);
+INSERT INTO Period_Tracker VALUES (1, "April", 15, 22);
+INSERT INTO Period_Tracker VALUES (1, "May", 14, 21);
+INSERT INTO Period_Tracker VALUES (1, "June", 13, 18);
+INSERT INTO Period_Tracker VALUES (1, "July", 17, 24);
+INSERT INTO Period_Tracker VALUES (1, "August", 13, 20);
+INSERT INTO Period_Tracker VALUES (1, "Sept", 17, 22);
+INSERT INTO Period_Tracker VALUES (1, "Oct", 15, 21);
+INSERT INTO Period_Tracker VALUES (1, "Nov", 15, 22);
+INSERT INTO Period_Tracker VALUES (1, "Dec", 13, 18);
+SELECT * FROM Period_Tracker;
+
+UPDATE Period_Tracker
+SET estimated_start_date=13 
+WHERE month="May";
+SELECT * FROM Period_Tracker;
+
+DELETE FROM Period_Tracker WHERE month="Dec";
+SELECT * FROM Period_Tracker;
+
+
+
+
+
+
