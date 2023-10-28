@@ -32,7 +32,7 @@ SELECT item_name
 FROM superstore
 ORDER BY price;
 
-#Use MAX statement to find highest priced item.
+#Use MAX to find highest priced item.
 SELECT MAX(price)
 FROM superstore
 WHERE category = 'Furnishings';
