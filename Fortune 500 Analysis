@@ -1,3 +1,5 @@
+#This analysis utilized the following Fortune 500 dataset:
+
 CREATE TABLE fortune_companies (
     company_id INTEGER PRIMARY KEY,
     company_name TEXT,
@@ -55,3 +57,67 @@ VALUES
     ('Company II', 'Telecommunications', 110.5, 2000, 1, 21, 12, 4.9),
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
+
+#Analysis
+
+
+#Which companies with over 2000 employees have healthcare benefits and which companies need healthcare benefits in this healthcare report.
+
+SELECT company_name,
+CASE WHEN healthcare_benefits <1 AND employees >2000
+THEN "Needs Healthcare"
+WHEN healthcare_benefits =1 AND employees >2000 
+THEN "Has Healthcare"
+END as "Healthcare Report"
+FROM fortune_companies;
+
+
+#Which company has the highest revenue with the average employee tenure between 6 to 10 years.
+
+SELECT MAX(revenue) as revenue, company_name, employees
+FROM fortune_companies
+WHERE avg_employee_tenure >6
+OR avg_employee_tenure <10;
+
+
+#How many companies offer healthcare benefits and how many employees have access have access to healthcare benefits.
+
+SELECT COUNT(company_name) as "companies with healthcare", employees as "employees with healthcare "
+FROM fortune_companies
+WHERE healthcare_benefits =1;
+
+
+#How many companies need to offer healthcare, and how many employees need access to healthcare benefits.
+
+SELECT COUNT(company_name) as "companies that need healthcare", employees as "employees that need healthcare"
+FROM fortune_companies
+WHERE healthcare_benefits !=1;
+
+
+#Which companies had employees that had 14 days paid time off. 
+
+SELECT company_name, employees
+FROM fortune_companies
+WHERE paid_time_off_days =14;
+
+
+#What is the average time off in weeks for those on maternity leave.
+
+SELECT AVG (maternity_leave_weeks) as "Average maternity leave weeks"
+FROM fortune_companies;
+
+
+#Which company had the lowest revenue with employees less than 6000.
+
+SELECT MIN(revenue) as "Lowest revenue", company_name
+FROM fortune_companies
+WHERE employees >6000;
+
+
+#Companies in the tech field showing their revenue, and paid time off days.
+
+SELECT company_name, ROUND(revenue) as "revenue", employees,paid_time_off_days
+FROM fortune_companies
+WHERE industry = "Technology"
+ORDER BY paid_time_off_days asc;
+
